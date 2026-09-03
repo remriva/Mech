@@ -1,0 +1,15 @@
+/* Shared styling for TeachBooks interactive Plotly widgets. */
+.tb-widget { max-width: 860px; margin: 0 auto; }
+.tb-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+  margin-bottom: 10px;
+}
+.tb-controls label { font-size: 0.9em; display: block; }
+.tb-controls input[type="range"] { width: 100%; }
+.tb-buttons { margin-bottom: 8px; display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; }
+.tb-buttons button { padding: 6px 16px; cursor: pointer; }
+.tb-info { font-size: 0.9em; }
+.tb-plot { width: 100%; height: 460px; }
+@media (max-width: 600px) { .tb-controls { grid-template-columns: 1fr; } }

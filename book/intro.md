@@ -1,8 +1,15 @@
 (intro)=
-# Welcome to the Template Book
+# Engineering Mechanics
 
-_This is the first page the student will see when opening the url._
+*Placeholder introduction — replace with your own course text.*
 
-TEST - first edit
+Welcome to the course. This interactive book collects the worked examples and animations for
+each week. Use the sidebar to navigate to the current week's material.
 
-This book can be used as a template for other books. It includes a starter package of the software developed by the TeachBooks initiative and some exercises to get you going!
+Each topic pairs a short problem statement with an interactive animation you can explore
+directly in the browser — change the parameters, press **Play**, and watch how the physics
+responds.
+
+```{tip}
+Start with {ref}`Week 1 <week1>`.
+```

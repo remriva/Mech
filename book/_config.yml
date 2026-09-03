@@ -2,6 +2,7 @@
 
 # This config includes an opinionated list of configuration options of TeachBooks, Jupyterbook v1, Sphinx and other extensions part of TeachBooks-Favourites.
 
+title: Engineering Mechanics                         # Book title, shown in the browser tab; replace with your own
 author: Author from Delft University of Technology, built with <a href="https://teachbooks.io">TeachBooks</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a>
                                                      # Replace TeachBooks Teams with your own name in the line above, configuratin part of JupyterBook: https://jupyterbook.org/en/stable/customize/config.html
 execute:
@@ -23,6 +24,9 @@ sphinx:                                              # Options passed on to the 
     language: en                                     # Defines language (English) of everything except the content itself. For Dutch: replace with `nl`, configuration part of Sphinx (https://www.sphinx-doc.org/en/master/index.html)
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js # Required for live code, part of TeachBooks-Sphinx-Thebe (https://teachbooks.io/manual/features/live_code.html)
+    - tb_plotly.js                      # Shared loader for interactive Plotly widgets (book/_static/tb_plotly.js); loads the vendored plotly-basic bundle, working around require.js/AMD
+    html_css_files:
+    - tb_widgets.css                    # Shared styling for interactive Plotly widgets (book/_static/tb_widgets.css)
     thebe_config:
       use_thebe_lite: true                           # Required for live code, part of TeachBooks-Sphinx-Thebe (https://teachbooks.io/manual/features/live_code.html)
       exclude_patterns: ["**/_*.yml", "**/*.md", "**/*.ipynb"] #exclude files which should not be accessible for live code, configuration part of TeachBooks-Sphinx-Thebe (https://teachbooks.io/manual/features/live_code.html)
@@ -30,7 +34,7 @@ sphinx:                                              # Options passed on to the 
     html_baseurl: "https://oit.tudelft.nl>/<repo>"   # Replace this with your own URL, configuration part of Sphinx (https://www.sphinx-doc.org/en/master/index.html)
     html_theme_options:
       logo:
-        text: TU Delft GitHub OILM Template          # Replace this with your own open interactive learning material title, configuration part of Sphinx (https://www.sphinx-doc.org/en/master/index.html)
+        text: Engineering Mechanics                  # Replace this with your own open interactive learning material title, configuration part of Sphinx (https://www.sphinx-doc.org/en/master/index.html)
         # image_light:                               # Default value not shown (line can be removed), adds your logo for the light mode here (can be the same as image_dark) (disabling of TU Delft logo is required), configuration part of Sphinx (https://www.sphinx-doc.org/en/master/index.html)
         # image_dark:                                # Default value not shown (line can be removed), adds your logo for the dark mode here (can be the same as image_light) (disabling of TU Delft logo is required), configuration part of Sphinx (https://www.sphinx-doc.org/en/master/index.html)
       repository_url: "https://github.com/TUDelft-books/repo" # Add your own repo URL here, configuration part of JupyterBook v1 (https://jupyterbook.org/en/stable/customize/config.html)
