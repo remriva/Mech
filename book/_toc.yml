@@ -13,3 +13,14 @@ parts:
       - file: week1/killer_loop.md
       - file: week1/spring_loaded_gun.md
       - file: week1/spring_slope_system.md
+    - file: week3/index.md
+      sections:
+      - file: week3/exploding_projectile.md
+      - file: week3/ballistic_pendulum.md
+      - file: week3/elastic_collision.md
+    - file: week4/index.md
+      sections:
+      - file: week4/rolling_motion.md
+      - file: week4/weight_pulley.md
+      - file: week4/maxwells_wheel.md
+      - file: week4/measuring_gravity_pendulum.md

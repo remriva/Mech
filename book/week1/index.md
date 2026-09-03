@@ -1,9 +1,9 @@
 (week1)=
-# Week 1: kinematics, forces & Newton's laws, work & energy, friction
+# Week 1 & 2: kinematics, forces & Newton's laws, work & energy, friction
 
 *Placeholder introduction — replace with your own course text.*
 
-Welcome to the first week of the course. This week we lay the groundwork for the rest of
+Welcome to the first two weeks of the course. These weeks lay the groundwork for the rest of
 engineering mechanics: how we describe motion (**kinematics**), what causes it (**forces** and
 **Newton's laws**), the bookkeeping of **work and energy**, and the ever-present complication of
 **friction**.
