@@ -1,8 +1,6 @@
 (w1-killer-loop)=
 # Killer loop
 
-*Placeholder text — replace with your own explanation.*
-
 A body released from rest at height $h$ slides down a frictionless ramp and around a vertical
 circular loop of radius $R$. With no friction its speed at any height $z$ follows from energy
 conservation,
