@@ -1,8 +1,6 @@
 (w1-parabolic-flight)=
 # Parabolic flight
 
-*Placeholder text — replace with your own explanation.*
-
 When a body is thrown near the Earth's surface and air resistance is neglected, its horizontal
 and vertical motions are independent: constant velocity horizontally, constant acceleration
 $g$ downward. The result is a **parabolic** trajectory. Launched from height $h$ with speed
