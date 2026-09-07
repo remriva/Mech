@@ -1,5 +1,5 @@
 (intro)=
-# Engineering Mechanics
+# Mechanics for Earth Climate and Technology
 
 *Placeholder introduction — replace with your own course text.*
 
