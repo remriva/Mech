@@ -1,8 +1,6 @@
 (w1-spring-loaded-gun)=
 # Spring-loaded gun
 
-*Placeholder text — replace with your own explanation.*
-
 A block of mass $m$ is pushed against a spring of stiffness $k$, compressing it from its natural
 length $L_0$ to $L_\text{comp}$, then released. While in contact the block undergoes simple
 harmonic motion; it leaves the spring at the natural length with speed

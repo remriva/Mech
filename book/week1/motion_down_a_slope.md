@@ -1,8 +1,6 @@
 (w1-motion-down-a-slope)=
 # Motion down a slope
 
-*Placeholder text — replace with your own explanation.*
-
 A block released on a frictionless incline of angle $\alpha$ accelerates down the slope under
 the component of gravity along the surface,
 
