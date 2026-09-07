@@ -1,8 +1,6 @@
 (intro)=
 # Mechanics for Earth Climate and Technology
 
-*Placeholder introduction — replace with your own course text.*
-
 Welcome to the course. This interactive book collects the worked examples and animations for
 each week. Use the sidebar to navigate to the current week's material.
 
