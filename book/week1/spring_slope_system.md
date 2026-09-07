@@ -15,7 +15,8 @@ energy-conserving case.
 ```{admonition} Problem
 :class: note
 For the ideal (frictionless, $\mu = 0$) case, find the maximum speed, the maximum acceleration,
-and the maximum height reached on the slope. Then increase $\mu$ and see how much height (and
+and the maximum height reached (with a strong enough spring the block launches off the top of the
+ramp and rises further as a projectile). Then increase $\mu$ and see how much height (and
 mechanical energy) friction costs you — with enough friction the block never reaches the slope
 at all.
 ```
@@ -74,8 +75,10 @@ tbLoadPlotly(function (Plotly) {
     var Lc = Math.min(+$('ss-lc').value, L0 - 0.1), mu = +$('ss-u').value;
     var A = L0 - Lc, omega = Math.sqrt(k / m), t1 = Math.PI / (2 * omega);
     var dur = 12, fps = 20, nf = dur * fps, dt = dur / nf, nsub = 5, sdt = dt / nsub;
+    var phiTop = Math.atan(2 * c * slopeLen);        // ramp angle at its top edge
     var pos = [], yy = [], vel = [], acc = [], phase = [];
-    var x = Lc, v = 0, y = 0, launched = false, a = 0, ph = 0;
+    var x = Lc, v = 0, y = 0, a = 0, ph = 0;
+    var launched = false, airborne = false, flew = false, done = false, vx = 0, vy = 0;
     for (var i = 0; i <= nf; i++) {
       var t = i * dt;
       if (t <= t1) {
@@ -83,26 +86,39 @@ tbLoadPlotly(function (Plotly) {
         y = 0; a = k * (L0 - x) / m; ph = 0;
       } else {
         if (!launched) { x = L0; v = omega * A; y = 0; launched = true; }
-        for (var s = 0; s < nsub; s++) {
-          var phi, aAl;
-          if (x < groundLen) { phi = 0; aAl = v > 0 ? -mu * g : 0; }
-          else {
-            var xr = Math.min(x - groundLen, slopeLen);
-            phi = Math.atan(2 * c * xr);
-            aAl = -g * Math.sin(phi) - (v > 0 ? mu * g * Math.cos(phi) : 0);
+        for (var s = 0; s < nsub && !done; s++) {
+          if (!airborne) {
+            var phi, aAl;
+            if (x < groundLen) { phi = 0; aAl = v > 0 ? -mu * g : 0; }
+            else {
+              var xr = Math.min(x - groundLen, slopeLen);
+              phi = Math.atan(2 * c * xr);
+              aAl = -g * Math.sin(phi) - (v > 0 ? mu * g * Math.cos(phi) : 0);
+            }
+            v = v + aAl * sdt; if (v < 0) v = 0;
+            x = x + v * Math.cos(phi) * sdt;
+            if (x - groundLen >= slopeLen) {           // reached the top edge of the ramp
+              if (v > 0) {                              // still moving → fly off as a projectile
+                airborne = true; flew = true;
+                vx = v * Math.cos(phiTop); vy = v * Math.sin(phiTop);
+                x = groundLen + slopeLen; y = maxH;
+              } else { x = groundLen + slopeLen; y = maxH; v = 0; done = true; }
+            } else {
+              y = x > groundLen ? c * Math.pow(Math.min(x - groundLen, slopeLen), 2) : 0;
+            }
+            a = aAl;
+          } else {                                     // projectile flight above the ramp
+            vy -= g * sdt; x += vx * sdt; y += vy * sdt;
+            v = Math.sqrt(vx * vx + vy * vy); a = -g;
+            if (vy < 0 && y <= maxH) { y = maxH; v = 0; vx = 0; vy = 0; airborne = false; done = true; }
           }
-          v = v + aAl * sdt; if (v < 0) v = 0;
-          x = x + v * Math.cos(phi) * sdt;
-          if (x - groundLen > slopeLen) { x = groundLen + slopeLen; v = 0; }
-          y = x > groundLen ? c * Math.pow(Math.min(x - groundLen, slopeLen), 2) : 0;
-          a = aAl;
         }
-        ph = x < groundLen ? 1 : 2;
+        ph = (airborne || flew) ? 3 : (x < groundLen ? 1 : 2);
       }
       pos.push(x); yy.push(y); vel.push(v); acc.push(a); phase.push(ph);
     }
-    var hmax = Math.max.apply(null, yy);
-    return { m:m, k:k, L0:L0, Lc:Lc, mu:mu, pos:pos, yy:yy, vel:vel, acc:acc, phase:phase, nf:nf, hmax:hmax };
+    var hmax = Math.max.apply(null, yy), xmax = Math.max.apply(null, pos);
+    return { m:m, k:k, L0:L0, Lc:Lc, mu:mu, pos:pos, yy:yy, vel:vel, acc:acc, phase:phase, nf:nf, hmax:hmax, xmax:xmax };
   }
 
   function frameTraces(d, i) {
@@ -121,8 +137,8 @@ tbLoadPlotly(function (Plotly) {
     ];
     var layout = {
       margin:{l:15, r:15, t:10, b:20}, showlegend:false,
-      xaxis:{range:[-0.3, groundLen + slopeLen + 1], zeroline:false, showticklabels:false, gridcolor:'rgba(128,128,128,0.15)'},
-      yaxis:{range:[-0.6, maxH + 0.6], zeroline:false, showticklabels:false, gridcolor:'rgba(128,128,128,0.15)'},
+      xaxis:{range:[-0.3, Math.max(groundLen + slopeLen + 1, d.xmax + 0.5)], zeroline:false, showticklabels:false, gridcolor:'rgba(128,128,128,0.15)'},
+      yaxis:{range:[-0.6, Math.max(maxH, d.hmax) + 0.6], zeroline:false, showticklabels:false, gridcolor:'rgba(128,128,128,0.15)'},
       paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#888'},
       shapes:[
         { type:'line', x0:0, y0:0, x1:0, y1:bs * 2, line:{color:'#888', width:3} },
@@ -143,7 +159,7 @@ tbLoadPlotly(function (Plotly) {
   function setInfo(d, i) {
     var comp = Math.max(d.L0 - d.pos[i], 0), U = 0.5 * d.k * comp * comp;
     var KE = 0.5 * d.m * d.vel[i] * d.vel[i], Ug = d.m * g * d.yy[i];
-    var names = ['spring', 'ground', 'slope'];
+    var names = ['spring', 'ground', 'slope', 'air'];
     info.innerHTML = '[' + names[d.phase[i]] + '] v: <b>' + d.vel[i].toFixed(2) + ' m/s</b> · h: <b>' +
       d.yy[i].toFixed(2) + ' m</b> · PE<sub>spr</sub>: <b>' + U.toFixed(1) + ' J</b> · KE: <b>' +
       KE.toFixed(1) + ' J</b> · PE<sub>grav</sub>: <b>' + Ug.toFixed(1) + ' J</b> · E: <b>' +
