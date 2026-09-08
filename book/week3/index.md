@@ -3,7 +3,7 @@
 
 This week we move from single particles to **systems of particles** and the first ideas of
 **rigid-body** motion. The key concepts are the **centre of mass**, **conservation of momentum**,
-and — as we begin to rotate things — **angular momentum** and **torque**.
+and — as we begin to rotate things — **angular momentum** and **torques**.
 
 Work through the three examples in order:
 
