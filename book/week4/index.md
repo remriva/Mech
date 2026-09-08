@@ -1,11 +1,8 @@
 (week4)=
 # Week 4: rigid bodies – part 2 (rotational inertia and energy, equations of motion), gravity
 
-*Placeholder introduction — replace with your own course text.*
-
 Building on the kinematics of rotation, this week is about the **dynamics** of rigid bodies:
-**rotational inertia** (the moment of inertia $I$), **rotational kinetic energy**
-$\tfrac{1}{2}I\omega^2$, and the rotational equation of motion $\tau = I\alpha$. We finish with
+**rotational inertia**, **rotational kinetic energy** and the rotational equation of motion. We finish with
 **gravity**, using a swinging pendulum to measure $g$.
 
 Work through the four examples in order:
