@@ -1,8 +1,6 @@
 (w1-spring-slope-system)=
 # Spring–slope system
 
-*Placeholder text — replace with your own explanation.*
-
 This example combines everything from the week. A spring launches a block of mass $m$ along the
 ground; the block then climbs a curved slope. Along the way we track the three energy stores —
 elastic $\tfrac{1}{2}kA^2$, kinetic $\tfrac{1}{2}mv^2$ and gravitational $mgh$.
