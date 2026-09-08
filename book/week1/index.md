@@ -2,9 +2,8 @@
 # Week 1 & 2: kinematics, forces & Newton's laws, work & energy, friction
 
 Welcome to the first two weeks of the course. These weeks lay the groundwork for the rest of
-engineering mechanics: how we describe motion (**kinematics**), what causes it (**forces** and
-**Newton's laws**), the bookkeeping of **work and energy**, and the ever-present complication of
-**friction**.
+engineering mechanics: how we describe motion (**kinematics**), what causes it (**forces**), how to model the effect of forces
+(**Newton's laws**), the concepts of **work** and **energy**, **conservative forces** and **friction**.
 
 Each section below pairs a short problem statement with an interactive animation you can play
 with directly in the browser — change the parameters, press **Play**, and watch how the physics
