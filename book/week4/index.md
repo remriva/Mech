@@ -1,5 +1,5 @@
 (week4)=
-# Week 4: rigid bodies – part 2 (rotational inertia and energy, equations of motion), gravity
+# Week 4: rigid bodies (rotational inertia and energy, equations of motion), gravity
 
 Building on the kinematics of rotation, this week is about the **dynamics** of rigid bodies:
 **rotational inertia**, **rotational kinetic energy** and the rotational equation of motion. We finish with
