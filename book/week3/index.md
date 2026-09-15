@@ -1,9 +1,7 @@
 (week3)=
-# Week 3: systems of particles, rigid bodies – part 1 (kinematics, angular momentum, torques)
+# Week 3: systems of particles
 
-This week we move from single particles to **systems of particles** and the first ideas of
-**rigid-body** motion. The key concepts are the **centre of mass**, **conservation of momentum**,
-and — as we begin to rotate things — **angular momentum** and **torques**.
+This week we move from single particles to **systems of particles**. The key concepts are the **centre of mass** and **conservation of (linear) momentum**.
 
 Work through the three examples in order:
 
