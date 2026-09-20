@@ -1,10 +1,8 @@
 (w3-exploding-projectile)=
 # Exploding projectile
 
-*Placeholder text — replace with your own explanation.*
-
 A body of mass $m_b$ moving with velocity $\vec v_b$ explodes into two fragments. Because the
-explosion is internal, **total momentum is conserved**:
+explosion is internal to the system, **total momentum is conserved**:
 
 $$
 m_b \vec v_b = m_1 \vec v_1 + m_2 \vec v_2 .
