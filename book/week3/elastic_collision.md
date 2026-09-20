@@ -1,8 +1,6 @@
 (w3-elastic-collision)=
 # 1D elastic collisions
 
-*Placeholder text — replace with your own explanation.*
-
 In a **head-on elastic collision**, both momentum and kinetic energy are conserved, which fixes
 the outgoing velocities uniquely:
 
