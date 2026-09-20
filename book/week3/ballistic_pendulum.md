@@ -1,8 +1,6 @@
 (w3-ballistic-pendulum)=
 # Ballistic pendulum
 
-*Placeholder text — replace with your own explanation.*
-
 A bullet of mass $m_b$ and speed $v_b$ embeds itself in a hanging block of mass $M$. The
 collision is **perfectly inelastic**, so momentum is conserved but kinetic energy is not:
 
