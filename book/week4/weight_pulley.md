@@ -1,21 +1,18 @@
 (w4-weight-pulley)=
 # Weight hanging with a pulley
 
-*Placeholder text — replace with your own explanation.*
-
-A block of mass $m_1$ on a frictionless table is connected over a pulley to a hanging mass
-$m_2$. If the pulley is **ideal (massless)**, the string tension is the same on both sides and
-
-$$
-a = \frac{m_2\, g}{m_1 + m_2}.
-$$
-
-If the pulley has mass — moment of inertia $I = \tfrac12 M_p R^2$ for a solid disk — it must be
-*spun up* too, so the acceleration drops and the two string tensions are **no longer equal**
-($T_\text{vertical} > T_\text{horizontal}$):
+A block of mass $m_1$ (blue) on a frictionless table is connected by a massless string over a pulley to a hanging
+mass $m_2$ (green). The string cannot slide over the pulley. If the pulley is **ideal (massless)**, the string
+tension is the same on both sides and
 
 $$
-a = \frac{m_2\, g}{m_1 + m_2 + I/R^2}.
+a = \frac{m_2\cdot g}{m_1 + m_2}.
+$$
+
+If the pulley has mass, hence a moment of inertia of $I = \tfrac12 M_p R^2$, it needs a net torque to accelerate. As a result, the two string tensions are **no longer equal** ($T_\text{vertical} > T_\text{horizontal}$) and the net linear acceleration is smaller than in the previous case:
+
+$$
+a = \frac{m_2\cdot g}{m_1 + m_2 + I/R^2}.
 $$
 
 ```{admonition} Problem
