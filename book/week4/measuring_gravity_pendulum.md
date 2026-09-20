@@ -1,8 +1,6 @@
 (w4-measuring-gravity)=
 # Measuring gravity with a swing pendulum
 
-*Placeholder text — replace with your own explanation.*
-
 For small swings a simple pendulum of length $L$ is a harmonic oscillator with period
 
 $$
