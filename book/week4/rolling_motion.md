@@ -1,10 +1,7 @@
 (w4-rolling-motion)=
 # Rolling motion down a slope
 
-*Placeholder text — replace with your own explanation.*
-
-A body rolling without slipping down an incline of angle $\alpha$ has to share its energy
-between translation and rotation, so it accelerates more slowly than a frictionless slider:
+The kinetic energy of a body rolling without slipping down an incline of angle $\alpha$ is partially translational ($$\frac{1}{2}mv^2$$) and partially rotational ($$\frac{1}{2}I\omega^2$$). As a result, its linear acceleration is smaller than when sliding without friction:
 
 $$
 a = \frac{g\sin\alpha}{1 + I/mr^2} .
