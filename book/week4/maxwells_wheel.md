@@ -1,7 +1,7 @@
 (w4-maxwells-wheel)=
 # Maxwell's wheel
 
-*Placeholder text — replace with your own explanation.*
+** to be fixed **
 
 A wheel hangs from two strings wound around a thin axle of radius $r$. As it falls it must spin,
 so gravity's work is shared between translation and rotation. With $I_S = \tfrac12 M R^2$ the
