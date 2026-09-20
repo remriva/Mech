@@ -1,15 +1,14 @@
 (w4-rolling-motion)=
 # Rolling motion down a slope
 
-The kinetic energy of a body rolling without slipping down an incline of angle $\alpha$ is partially translational ($$\frac{1}{2}mv^2$$) and partially rotational ($$\frac{1}{2}I\omega^2$$). As a result, its linear acceleration is smaller than when sliding without friction:
+The kinetic energy of a body rolling without slipping down an incline of angle $\alpha$ is partially translational ($\frac{1}{2}mv^2$) and partially rotational ($\frac{1}{2}I\omega^2$). As a result, its linear acceleration is smaller than when sliding without friction:
 
 $$
-a = \frac{g\sin\alpha}{1 + I/mr^2} .
+a = \frac{g\cdot\sin\alpha}{1 + I/mr^2} .
 $$
 
-The factor $I/mr^2$ is $\tfrac12$ for a solid cylinder, $1$ for a hoop (hollow cylinder) and
-$\tfrac25$ for a solid sphere — so the **sphere wins**, the solid cylinder is next, and the hoop
-comes last, *regardless of mass and radius*.
+The factor $I/mr^2$ is equal to $\tfrac12$ for a solid cylinder, $1$ for a hoop (hollow cylinder) and
+$\tfrac25$ for a solid sphere. As long as the three objects have the same mass and the same radius, the sphere arrives first, the solid cylinder second, and the hoop last.
 
 ```{admonition} Problem
 :class: note
