@@ -1,8 +1,6 @@
 (w4-maxwells-wheel)=
 # Maxwell's wheel
 
-** to be fixed **
-
 A wheel hangs from two strings wound around a thin axle of radius $r$. As it falls it must spin,
 so gravity's work is shared between translation and rotation. With $I_S = \tfrac12 M R^2$ the
 downward acceleration is tiny,
@@ -114,11 +112,13 @@ tbLoadPlotly(function (Plotly) {
     var dt = 1 / 60;
     timer = setInterval(function () {
       for (var sub = 0; sub < 2; sub++) {
-        var a = mode === 'down' ? P.a : -P.a;
-        v += a * (dt / 2); y += v * (dt / 2);
-        var omega = (mode === 'down' ? v : -v) / P.r; phi += omega * (dt / 2);
-        if (mode === 'down' && y >= P.h) { y = P.h; v = -v * (1 - P.damp); mode = 'up'; }
-        else if (mode === 'up' && y <= 0) { y = 0; v = -v * (1 - P.damp); mode = 'down'; }
+        v += P.a * (dt / 2);                                 // gravity always acts downward (+y is down)
+        y += v * (dt / 2);
+        if (y >= P.h) { y = P.h; v = -v * (1 - P.damp); }    // jerk at the bottom: translation reverses (string rewinds)
+        if (y < 0) { y = 0; if (v < 0) v = 0; }              // cannot rise above the support
+        mode = v >= 0 ? 'down' : 'up';                       // direction from the velocity sign
+        var omega = (mode === 'down' ? v : -v) / P.r;        // wheel keeps spinning the same way throughout
+        phi += omega * (dt / 2);
       }
       restyleFrame();
     }, dt * 1000);
